@@ -1,0 +1,56 @@
+<h2>{{ittitle}}</h2>
+  
+<p>
+  <br><img [src] ="imgSrc">
+</p>
+<p [class.blue-color]="applyclass">CSS class binding example</p>
+<p [style.color] = "applystyle ? 'blue':'green'">STYLE binding example</p>
+
+<h3 class="center">Event handling/binding</h3>
+<div class="center"><button (mouseover)="onClick($event)">Mouseover for event</button></div>
+<p class="center">For OutPut Check browser console</p>
+<div class="center" ><input  type="text" value="Praveen" #inputID ></div>
+<br><div class="center"><button (click) ="onClick2(inputID.value)">Submit for event</button></div>
+<p class="center">For OutPut Check browser console</p>
+
+
+<h3 class="center">Two way data binding</h3>
+<div class="center">
+  <input type="text" value="Write Here" [(ngModel)]="fname"> 
+  <input type="text" value="enter somthing here" [(ngModel)]="lname">
+  <p><strong>Output:</strong> {{fname}} {{lname}}</p>
+</div>
+
+<div class="center">
+  <h2>Directives</h2>
+  
+  <h3>Structural directives</h3>
+  <h3>1. ngIf</h3>
+  <p *ngIf="dispValue">Disp value is true</p>
+  <h3>2. ngSwich</h3>
+  <div [ngSwitch]= "props">
+    <p *ngSwitchCase  = "'1'">This is for ngSwitchCase  prop is 1</p>
+    <p *ngSwitchCase  = "'2'">This is for ngSwitchCase  prop is 2</p>
+    <p *ngSwitchDefault>Invalid prop</p>
+  </div>
+  <h3>3. ngFor</h3>
+      <ul>
+          <li *ngFor = "let v of forElements">{{v}}</li> 
+      </ul>
+  
+  <h3>Attribute directives</h3>
+  <h3>1. ngClass</h3>
+      <p [ngClass]="{classOne:cone,classTwo:ctwo}">ngClass Example check html</p>
+      <button (click)="ChangeColor()">toggle</button>
+  <h3>2. ngStyle</h3>
+      <p [ngStyle]="{'font-style':style,'font-size':size}">ngStyle Example</p>
+</div>
+
+<div>
+ <h2>Inputs and Outputs</h2>
+ <h3 class="colorsk">Data From Child Component</h3>
+ <label>Enter Some Data to display in child component</label>
+ <input type="text" #cText (keyup)="onChange(cText.value)">
+ <p>Value from Parent component is : {{parentData}} </p>
+</div>
+

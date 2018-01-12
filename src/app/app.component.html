@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div>
+  <app-internal-things (childEvent)="childData=$event" [parentData]="pText.value"></app-internal-things>
+</div>
+<div class="center">
+  <h3>Data From Parent Component</h3>
+  <label>Enter some data to display in Parent componet</label>
+  <input type="text" #pText (keyup)="0">
+  <p>Value from Child component is : {{childData}} </p>
+</div>
+
